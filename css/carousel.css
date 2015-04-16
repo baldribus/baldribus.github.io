@@ -5,7 +5,14 @@
 body {
   padding-bottom: 40px;
   color: #000000;
-  background-image: url('../images/ludd_og_eddie.png') no-repeat center center fixed;
+  background-image: url('../images/ludd_og_eddie.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color:#fff;
+  	background-color:#333;
+  	font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
 
 
