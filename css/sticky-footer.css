@@ -18,6 +18,10 @@ body {
   opacity: 0.5;
 }
 
+.wishlist {
+  background-color: #000;
+  opacity: 0.7;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
