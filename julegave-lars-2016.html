@@ -19,7 +19,8 @@
     <![endif]-->
 	<link href="css/carousel.css" rel="stylesheet">
 	<link href="css/sticky-footer.css" rel="stylesheet">
-        <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="timeTo.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
 <div class="navbar-wrapper">
@@ -35,20 +36,19 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="julegave-lars-2016.html">Til Lars Fra Nils-Kristian</a>
-            </div>   
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="item"><a href="countdown.html">Åpne julegaven din</a></li>
-              </ul>
-            </div>         
+            </div>                        
           </div>
-        </nav>
+        </nav> 
+        
       </div>
     </div>  
 
     <footer class="footer">
     	<div class="container">
-            <h1>Her kommer info om gaven</h1>
+            <div id="presangen" hidden>
+                <h1>Du får 8 utgaver av FRI FLYT i posten. God Jul!</h1>                 
+            </div>
+            <div id="countdown" class="countdown"></div>            
         </div>
     </footer>
 
@@ -56,6 +56,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="jquery.time-to.min.js"></script>
+    <script>
+        
+        var openPresentDate = new Date('Sat Dec 24 2016 21:00:00 GMT+0100 (W. Europe Standard Time)');
+        var currentDate = new Date();
+
+        if (currentDate > openPresentDate)
+        {
+            $('#presangen').toggle();            
+        }
+        else {
+            $('#countdown').timeTo({
+                timeTo: openPresentDate,
+                displayDays: 2,
+                theme: "black",
+                displayCaptions: false,
+                fontSize: 48,
+                captionSize: 14
+            }, function() {
+                $('#presangen').toggle();
+                $('#countdown').toggle();
+            });
+        }
+        
+    </script>
   </body>
 </html>
 
